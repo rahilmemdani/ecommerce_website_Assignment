@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecommerce</title>
+</head>
+
+<body>
+
+
+
+  <div class="full-bg"></div>
+  <div class="loginBox">
+    <div class="login">
+      <div class="welcome">
+        <h2>Welcome to </h2>
+        <h3>Ecommerce Website</h3>
+      </div>
+      <div class="buttons">
+        <button id="log">Login</button>
+        <button id="reg">Register</button>
+      </div>
+    </div>
+  </div>
+
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+
+    *,
+    body {
+      top: 0;
+      left: 0;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+
+
+    .full-bg {
+      background-image: url(https://source.unsplash.com/random/1920x1080);
+      background-position: center center;
+      background-size: cover;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      z-index: -99;
+      transition: all 0.3s ease-in;
+    }
+
+    .loginBox {
+      z-index: 10;
+      display: flex;
+      width: 100vw;
+      height: 100vh;
+
+
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login {
+      padding: 2em;
+      width: min(30rem, 80%);
+      min-height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      background: rgba(5, 0, 0, 0.35);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(9.5px);
+      -webkit-backdrop-filter: blur(9.5px);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+
+    }
+
+    .login .welcome h2,
+    h3 {
+      color: white;
+      letter-spacing: 4px;
+      text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.6);
+    }
+
+    .login .welcome h3 {
+      font-size: 1.7em;
+
+
+    }
+
+    .login input {
+      font-family: 'Montserrat', sans-serif;
+      color: white;
+      font-weight: 900;
+      letter-spacing: 4px;
+      text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.6);
+      margin-top: 7px;
+      margin-bottom: 7px;
+      border: none;
+      outline: none;
+      width: 120px;
+      padding: 0.5em;
+      background: transparent;
+      border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+      border-left: 3px solid rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease-in;
+    }
+
+    .login input::placeholder {
+      color: white;
+      text-transform: uppercase;
+      font-weight: 900;
+
+      letter-spacing: 4px;
+      text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.6);
+    }
+
+    .login input:hover {
+      width: 95%;
+      border-right: 3px solid rgba(0, 0, 0, 0.1);
+      border-top: 3px solid rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 6px 6px -3px rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.3);
+
+    }
+
+    .login input:focus {
+      width: 95%;
+      border-right: 3px solid rgba(0, 0, 0, 0.1);
+      border-top: 3px solid rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 6px 6px -3px rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.8);
+      border-image: linear-gradient(to left, #79ff00, rgba(78, 78, 78, 1), #00ff91) 30;
+    }
+
+    .login .buttons {
+      width: 100%;
+    }
+
+    .login button {
+      cursor: pointer;
+      width: 135px;
+      height: 35px;
+      margin-top: 7px;
+      border: none;
+      outline: none;
+      background-color: #3a57af;
+      color: white;
+      font-weight: 900;
+      letter-spacing: 4px;
+      text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.6);
+      transition: all 0.2s ease-in-out;
+    }
+
+    .login button:hover,
+    .login button:focus {
+      transform: scale(0.95);
+    }
+  </style>
+
+  <script src="jquery-3.5.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#log').on('click', function () {
+        window.location.href = "login.html"
+      })
+
+      $('#reg').on('click', function () {
+        window.location.href = "signup.html"
+      })
+    })
+  </script>
+
+</body>
+
+</html>

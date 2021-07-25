@@ -1,0 +1,15 @@
+version: '3'
+services:
+  app:
+    container_name: node_ecommerce_app
+    restart: always
+    build: .
+    ports:
+    - '80:5000'
+    links:
+    - mongo
+  mongo:
+    container_name: mongo_ecommerce_app
+    image: mongo
+    ports:
+    - '27017:27017'

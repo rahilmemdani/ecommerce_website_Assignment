@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet'
+        type='text/css'>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <title>Registration page</title>
+</head>
+
+<body>
+    <div class="testbox">
+        <h1 style="color:#3a57af"><b>Sign up</b></h1>
+        <form>
+            <hr>
+            <div class="accounttype">
+                <p id="suc" style="color:green;font-size:15px;width: fit-content;"></p>
+            </div>
+            <label id="icon" for="number"><i class="fas fa-phone-alt"></i></label>
+            <input type="text" id="number" name="number" placeholder="phone" autocomplete="off" required>
+            <button id='otp' class="inputButton">send otp</button><br>
+            <p id="otpSentPar" style="color:red;font-size: 15px;width: fit-content;"></p>
+            <p id="emailPar" style="color:red;font-size: 15px;width: fit-content;"></p><br>
+            <label id="icon" for="otpVal"><i class="fas fa-key"></i></label>
+            <input type="text" id="otpVal" placeholder="enter otp" autocomplete="off">
+            <button id="sub" class="inputButton">Submit</button><br>
+            <p id="otpPar" style="font-size: 15px;"></p><br>
+            <label id="icon" for="name"><i class="icon-user"></i></label>
+            <input type="text" name="name" placeholder="name" id="name" autocomplete="off" required><br><br>
+            <label id="icon" for="email"><i class="icon-envelope "></i></label>
+            <input type="email" id="email" name="email" placeholder="email" autocomplete="off" required><br>
+            <p id="emailErr"></p><br>
+            <button id="reg" class="inputButton" hidden>Register</button><br>
+
+        </form>
+    </div>
+
+
+    <style>
+        body,
+        div,
+        dl,
+        dt,
+        dd,
+        ul,
+        ol,
+        li,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        pre,
+        form,
+        fieldset,
+        input,
+        textarea,
+        p,
+        blockquote,
+        th,
+        td {
+            padding: 0;
+            margin: 0;
+        }
+
+        fieldset,
+        img {
+            border: 0
+        }
+
+        ol,
+        ul,
+        li {
+            list-style: none;
+            font-size: 13px;
+        }
+
+        :focus {
+            outline: none
+        }
+
+        body,
+        input,
+        textarea,
+        select {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: #181818;
+        }
+
+
+
+        p {
+            font-size: 12px;
+            width: 150px;
+            display: inline-block;
+            margin-left: 15px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 300;
+            color: #4c4c4c;
+            text-align: center;
+            padding-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        html {
+            background-color: #3a57af;
+        }
+
+        .testbox {
+            margin: 80px auto;
+            width: 443px;
+            height: 600px;
+            -webkit-border-radius: 8px/7px;
+            -moz-border-radius: 8px/7px;
+            border-radius: 8px/7px;
+            background-color: #ebebeb;
+            -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, .31);
+            -moz-box-shadow: 5px 5px 5px rgba(0, 0, 0, .31);
+            box-shadow: 10px 10px 5px rgba(0, 0, 0, .31);
+            border: solid 1px white;
+        }
+
+        #otp {
+            border: 1px solid #3a57af;
+            padding: 10px;
+            color: #3a57af;
+            border-radius: 6%;
+        }
+
+
+
+        #otp:hover {
+            color: white
+        }
+
+        #sub {
+            border: 1px solid #3a57af;
+            padding: 10px 15px;
+            color: #3a57af;
+            border-radius: 6%;
+        }
+
+        #sub:hover {
+            color: white
+        }
+
+        #show {
+            border: 1px solid #3a57af;
+            padding: 10px 29px;
+            color: #3a57af;
+            border-radius: 6%;
+        }
+
+        #show:hover {
+            color: white;
+        }
+
+        #reg {
+            border: 1px solid #3a57af;
+            padding: 10px 140px;
+            color: #3a57af;
+            border-radius: 3%;
+            margin-left: 17px;
+            margin-top: 15px;
+        }
+
+        #reg:hover {
+            color: white;
+        }
+
+        input[type=radio] {
+            visibility: hidden;
+        }
+
+        form {
+            margin: 0 30px;
+        }
+
+        label.radio {
+            cursor: pointer;
+            text-indent: 35px;
+            overflow: visible;
+            display: inline-block;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        label.radio:before {
+            background: #3a57af;
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+        }
+
+        label.radio:after {
+            opacity: 0;
+            content: '';
+            position: absolute;
+            width: 0.5em;
+            height: 0.25em;
+            background: transparent;
+            top: 7.5px;
+            left: 4.5px;
+            border: 3px solid #ffffff;
+            border-top: none;
+            border-right: none;
+
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+
+
+
+        hr {
+            color: #3a57af;
+            opacity: 50;
+        }
+
+        input[type=text],
+        input[type=password],
+        input[type=email],
+        input[type=number] {
+            width: 200px;
+            height: 39px;
+            -webkit-border-radius: 0px 4px 4px 0px/5px 5px 4px 4px;
+            -moz-border-radius: 0px 4px 4px 0px/0px 0px 4px 4px;
+            border-radius: 0px 4px 4px 0px/5px 5px 4px 4px;
+            background-color: #fff;
+            -webkit-box-shadow: 1px 2px 5px rgba(0, 0, 0, .09);
+            -moz-box-shadow: 1px 2px 5px rgba(0, 0, 0, .09);
+            box-shadow: 1px 2px 5px rgba(0, 0, 0, .09);
+            border: solid 1px #cbc9c9;
+            margin-left: -5px;
+            margin-top: 13px;
+            padding-left: 10px;
+
+        }
+
+
+
+        #icon {
+            display: inline-block;
+            width: 30px;
+            background-color: #3a57af;
+            padding: 8px 0px 8px 15px;
+            margin-left: 15px;
+            -webkit-border-radius: 4px 0px 0px 4px;
+            -moz-border-radius: 4px 0px 0px 4px;
+            border-radius: 4px 0px 0px 4px;
+            color: white;
+            -webkit-box-shadow: 1px 2px 5px rgba(0, 0, 0, .09);
+            -moz-box-shadow: 1px 2px 5px rgba(0, 0, 0, .09);
+            box-shadow: 1px 2px 5px rgba(0, 0, 0, .09);
+            border: solid 0px #cbc9c9;
+        }
+
+
+
+
+        button:hover {
+            top: 3px;
+            background-color: #2e458b;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            cursor: pointer;
+            color: white;
+        }
+    </style>
+
+
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            //Only numbers allowed in otp and phone number input
+
+            $("#number,#otpVal").on("keypress", function (evt) {
+                if (evt.which != 8 && evt.which != 0 && evt.which < 48 || evt.which > 57) {
+                    evt.preventDefault();
+                }
+            });
+
+
+
+            //Sending otp if number inputed is correct
+            $('#otp').on('click', function (e) {
+                e.preventDefault();
+                $.post('/otpReg', $('form').serialize()).done(function (data) {
+                    if (data.registered) {
+                        $('#emailPar').text('*This phone number is already registered');
+                    } else if (data.otpSent) {
+                        $("#emailPar").text('An OTP has been sent on the above number').css('color', 'green');
+                        $('#otp').hide();
+                    } else if (data.error) {
+                        $('#emailPar').text('Incorrect phone number').css('color', 'red');
+                    }
+                })
+            })
+
+
+            //Otp submit button
+            $('#sub').on('click', function (e) {
+                e.preventDefault();
+
+                $.ajax({
+                    method: 'GET',
+                    url: '/sendOtp'
+                }).done(function (dt) {
+                    // console.log(dt);
+                    if (dt != undefined) {
+                        if (dt == $('#otpVal').val()) {
+                            $('#reg').show();
+                            $('#otpPar').text('Correct otp').css('color', 'green');
+                        } else {
+                            $('#reg').hide();
+                            $('#otpPar').text('Incorrect otp').css('color', 'red');
+                        }
+                    } else {
+                        $('#otpPar').text('Incorrect otp').css('color', 'red');
+                    }
+                })
+            })
+
+
+            // Register after checking the password is according to standards
+            $('#reg').on('click', function (e) {
+                e.preventDefault();
+
+                $.post('/signUp', $('form').serialize()).done(function (dt) {
+                    console.log(dt);
+                    if (dt.inserted === true) {
+                        $('#suc').text("You've successfully registered.");
+                        $('#emailErr').text('');
+                        $('#listings').html('');
+                        setTimeout(function () {
+                            var number = $('#number').val().replace(/.(?=.{4})/g, 'x');
+                            window.location.href = 'home.html?number=' + number;
+                        }, 500);
+                    } else if (dt.exist) {
+                        $('#emailErr').text(`Email id already exists!`).css('color', 'red').css('font-size', '15px').css('display', 'inline-block');
+                        $('#listings').html('');
+                    } else if (dt.email === false) {
+                        $('#emailErr').text('Incorrect email id').css('color', 'red').css('font-size', '15px');
+                        $('#listings').html('');
+                    }
+                })
+            })
+        })
+    </script>
+
+</body>
+
+</html>
