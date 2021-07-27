@@ -25,10 +25,10 @@
 
 ### 4) Pull and run with commands:-
        * To run this program, you need to pull it on your local machine using git command. 
-	          >> command:- git clone (https://github.com/rahilmemdani/ecommerce_website_Assignment.git)
+	          >> git clone (https://github.com/rahilmemdani/ecommerce_website_Assignment.git)
        * After pulling it on your local machine, go to the path where this project is residing using terminal.
        * Now, you can run it using the docker command.
-   	          >> command:- docker-compose up 
+   	          >> docker-compose up 
       * To check if the docker container is running type command:- 
               >> docker ps
       * To check the image type command:- 
