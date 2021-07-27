@@ -28,10 +28,7 @@
 	          >> command:- git clone (https://github.com/rahilmemdani/ecommerce_website_Assignment.git)
        * After pulling it on your local machine, go to the path where this project is residing using terminal.
        * Now, you can run it using the docker command.
-   	          >> command1:- docker-compose up 
-	    The above command1 is used to run the container. 
-	          >> command2:- docker-compose up -d
-	    The above command2 is to run the container in detached mode i.e docker container will run in the background of your terminal.
+   	          >> command:- docker-compose up 
       * To check if the docker container is running type command:- 
               >> docker ps
       * To check the image type command:- 
