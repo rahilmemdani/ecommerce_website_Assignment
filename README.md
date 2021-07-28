@@ -18,7 +18,7 @@
   
   
 ### 3) Installation:-
-    * If you don’t have docker installed on you local machine, you can install it from (https://docs.docker.com/engine/install/) depending upon the 
+    * If you don’t have docker installed on your local machine, you can install it from (https://docs.docker.com/engine/install/) depending upon the 
        platform(Mac/Windows).
    	* Once installed, open it on your local machine(docker desktop) and it should be running.
 
